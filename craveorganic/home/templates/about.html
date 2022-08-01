@@ -1,0 +1,124 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<section class="page_banner about-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="banner-title" style="background: -webkit-linear-gradient(#1e4c14, rgba(255, 255, 255, 0.959));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">About Us</h2>
+                <p class="breadcrumbs">
+                    <a href="{% url 'index' %}"><i class="twi-home"></i>Home</a><i class="twi-angle-right"></i>About Page
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="aboutsection">
+    <div class="crave-about">
+        <div class="cheader">
+            About
+        </div>
+        <h1><span style="color:#674519;">Crave</span> <span style="color: #206c11;">Organic</span></h1>
+        <div class="crave-about-content">
+            <p>
+                The CRAVE ORGANIC is an online organic store which provides organic foods without going to an actual or a physical store. We Provide Clean, Hygiene, Natural or Organic products to your doorsteps. By implementing this, it would be really helpful for both
+                the Farmers and as well as the Customers.
+                <span style="font-weight: 350px;">We provide best service in town</span>. We collect fresh Veggies, Fruits or any other organic materials directly from farmers. So with this the farmers can actually sell their products in fresh and at
+                early and where as the Customers, they can buy these purely fresh items without any delay.
+
+            </p>
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+<section class="aboutSection02">
+    <div class="container largeContainer">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="abThumb02 text-center">
+                    <img src="{% static 'images/about/1.png'%}" alt="">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="subTitle sbsm">Only Organic</div>
+                <h2 class="secTitle">The Best Choice For your Health.</h2>
+                <p>
+                    If Health is your primary choice, then without any second thoughts, choose <span style="color:#674519;">Crave</span> <span style="color: #206c11;">Organic</span>
+                </p>
+                <ul class="listItem withbg">
+                    <li><span><i class="twi-check-circle"></i>100% Natural</span></li>
+                    <li><span><i class="twi-check-circle"></i>Increases Immunity.</span></li>
+                    <li><span><i class="twi-check-circle"></i>Promises Better Health</span></li>
+                    <li><span><i class="twi-check-circle"></i>Promises Deliver On Time</span></li>
+
+                </ul>
+                <a href="{% url 'shop' %}" class="organ_btn ob02">Shop Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="teamSection03">
+    <div class="container largeContainer">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="subTitle sbsm"><span style="color:#674519; ;">Crave </span> <span style="color:#206c11;">Organic</span></div>
+                <h2 class="secTitle">Founder <span style="color: #674519;"> &</span> Developer<span style="color:#206c11;">.</span></h2>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12">
+                <div class="teamItem03 text-center">
+                    <img src="{% static 'images/team/6.png'%}" alt="" style="margin-bottom:20px;">
+
+                    <h5>Mohammed Rabeeh</h5>
+                    <div class="conSocial" style="margin: 25px;">
+                        <a href="https://www.facebook.com/muhammed.rabeeeh"><i class="twi-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rabeee___/"><i class="twi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/mohammed-rabeeh-/"><i class="twi-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock%}
