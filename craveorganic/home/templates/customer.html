@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block content %}{% for Customer in customer %}
+
+
+<div class="card" style="width: 18rem;">
+    <!-- <img class="card-img-top" src="{{ product.images.image }}" alt="Card image cap"> -->
+    <div class="card-body">
+        <div>
+            <p>Sample text</p>
+        </div>
+        <h5 class="card-title">{{ Customer.first_name }}</h5>
+        <p class="card-text">{{ Customer.last_name }}</p>
+        <!-- <p class="card-text">Price - {{ product.price }}</p> -->
+        <a href="#" class="btn btn-primary">Buy Now</a>
+    </div>
+</div>
+{% endfor %} {% endblock %}

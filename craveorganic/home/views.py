@@ -1,10 +1,16 @@
 from django.shortcuts import render
+from home.models import Products
+
+from home.models import Customer
+
+#from home.models import Products
 
 # Create your views here.
 
 #index page
 def index(request):
-    return render(request,'index.html')
+    products = Products.objects.all()
+    return render(request,'index.html', {'products':products})
 
 #shop page
 def shop(request):
@@ -29,3 +35,12 @@ def cart(request):
 #single product page
 def product(request):
     return render(request,'product.html')
+
+def customer(request):
+    customer = Customer.objects.all()
+    return render(request,'customer.html',{'customer':customer})
+
+#products
+def products(request):
+    products = Products.objects.all()
+    return render(request, 'products.html', {'products':products})

@@ -103,10 +103,11 @@
             </div>
         </div>
         <div class="row shaff_grid ">
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/26.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }}" " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -125,17 +126,19 @@
                             <i class="twi-star1 "></i>
                             <span>(01)</span>
                         </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
+                        <h3><a href="{% url 'product' %} ">{{ Products.name }}</a></h3>
                         <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
+                            <span class="price "><del>₹200.00</del><ins>{{Products.price}}</ins></span>
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/27.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }} " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -161,10 +164,12 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/28.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }} " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -190,10 +195,12 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/29.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }} " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -219,10 +226,12 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/30.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }} " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -248,10 +257,12 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/31.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }} " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -277,10 +288,12 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            {% for Products in products %}
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
-                        <img src="{% static 'images/product/26.png'%} " alt=" ">
+                        <img src="{{ Products.images.url }} " alt=" ">
                         <div class="piActionBtns ">
                             <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
@@ -306,6 +319,8 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            
             <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
                 <div class="productItem07 ">
                     <div class="proThumb07 ">
@@ -335,6 +350,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="row ">
             <div class="col-md-12 text-center ">
