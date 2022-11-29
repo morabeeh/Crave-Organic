@@ -1793,10 +1793,15 @@ header .menuToggler {
 .ratings {
     display: flex;
     font-size: 11px;
-    color: #ffa900;
+    color: #62a403;
     letter-spacing: 1px;
     line-height: 1.1;
     margin: 0 0 16px
+}
+
+.prdescription {
+    color: #525649;
+    font-size: 15px;
 }
 
 .ratings .twi-star1 {
@@ -4820,10 +4825,43 @@ footer.withmailchimp .widget {
     font-family: spartan, sans-serif;
     background: #fff;
     border-radius: 10px;
+    margin: 100px 3px 40px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.craveproduct {
+    position: relative;
+    font-family: spartan, sans-serif;
+    background: #fff;
+    border-radius: 10px;
     margin: 95px 0 30px;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease
+    transition: all .3s ease;
+}
+
+.cravebutton {
+    border-radius: 50px;
+}
+
+.cravebutton:hover {
+    background-color: #28a745;
+    transition: 0.7s;
+}
+
+.cravecarthead {
+    text-align: center;
+    margin-bottom: auto;
+    -webkit-transition: color 1s;
+    /* For Safari 3.0 to 6.0 */
+    transition: color 1s;
+    /* For modern browsers */
+}
+
+.cravecarthead:hover {
+    color: #28a745;
 }
 
 .productItem06 .piActionBtns {
@@ -5309,7 +5347,7 @@ footer.withmailchimp .widget {
 }
 
 .hm02 .accessNav {
-    margin: 19px 10px 0 0
+    margin: 8px -30px 5px 8px;
 }
 
 .hm02 .accessNav a.cartBtn,
@@ -5695,7 +5733,7 @@ footer.withmailchimp .widget {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -73px;
+    bottom: -40px;
     margin: auto;
     width: auto;
     max-width: 100%;
@@ -5793,7 +5831,8 @@ footer.withmailchimp .widget {
 
 .product_content07 .pi01Price {
     font-size: 14px;
-    letter-spacing: -.7px
+    letter-spacing: -.7px;
+    margin-bottom: 10px;
 }
 
 .product_content07 .pi01Price del {
@@ -6718,12 +6757,14 @@ footer.footer_white .widget.contact_widget {
     background-image: url('/static/images/bg/banner.jpg');
     min-height: 190px;
     padding: 80px 0 0;
+    margin-bottom: 120px;
 }
 
 .wishlist_banner {
     background-image: url('/static/images/bg/banner.jpg');
     min-height: 190px;
     padding: 80px 0 0;
+    margin-bottom: 120px;
 }
 
 .contact_banner {
@@ -6746,7 +6787,7 @@ footer.footer_white .widget.contact_widget {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: #f0f0f0
+    background-color: #f0f0f0;
 }
 
 .about-banner {
@@ -8017,7 +8058,7 @@ footer.footer_white .widget.contact_widget {
 .shopController {
     display: flex;
     justify-content: space-between;
-    margin: 0 0 38px
+    margin: 0 0 42px
 }
 
 .filterBy {

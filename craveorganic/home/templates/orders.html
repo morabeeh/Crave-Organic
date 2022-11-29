@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+
+<section class="page_banner wishlist_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="banner-title">Wishlist Page</h2>
+                <p class="breadcrumbs">
+                    <a href="{% url 'index' %}"><i class="twi-home"></i>Home</a><i class="twi-angle-right"></i>Wishlist Page
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% load cart %} {% load custom_filter %}
+<div class="container" style="line-height:80px">
+    <div class="border rounded p-4 m-4">
+        <h2 class=" cravecarthead">Your Orders <i class="fa-solid fa-bag-shopping"></i></h2>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sno.</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for order in orders %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td><img style="height: 80px;" class="rounded-circle" src="{{order.product.images.url}}" alt=""></td>
+                    <td>{{order.product.name}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{order.price|currency}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.quantity|multiply:order.price|currency}}</td>
+                    {% if order.status %}
+                    <td><small class="badge badge-success">Completed</small>
+                        <p style="font-size:x-small; margin-top: -70px;">Your Item will be delivered shortly.</p><br>
+                        <p style="font-size:x-small; margin-top: -195px;"> Keep Shopping with <span style="color:#674519; font-size: small; ">Crave</span>
+                            <span style="color: #206c11; font-size: small; ">Organic</span></p>
+                    </td>
+
+                    {%else%}
+                    <td><small class="badge badge-warning">Pending</small></td>
+                    {% endif %}
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

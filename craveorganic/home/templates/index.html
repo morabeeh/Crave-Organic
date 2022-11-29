@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-
+{% extends 'base.html' %} {% load static %} {% block content %} {% load cart %} {% load custom_filter %}
 
 <section class="slider_02">
     <div class="rev_slider_wrapper">
@@ -95,7 +94,7 @@
             <div class="col-xl-7 ">
                 <ul class="filter_menu02 shaff_filter text-right clearfix ">
                     <li class="active " data-group="all ">All Products</li>
-                    <li data-group="beverages ">Beverages</li>
+                    <li data-group="Vegetables ">{{ Products.category.vegetables }}</li>
                     <li data-group="butter_egg ">Butter & Eggs</li>
                     <li data-group="dried ">Dried</li>
                     <li data-group="food ">Food</li>
@@ -113,7 +112,7 @@
                                 <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
                         </div>
                         <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
+                            <p class="justin ">Fresh & Organic</p>
                         </div>
                         <p class="off ">Sale 20%</p>
                     </div>
@@ -124,233 +123,19 @@
                             <i class="twi-star "></i>
                             <i class="twi-star "></i>
                             <i class="twi-star1 "></i>
-                            <span>(01)</span>
+                            <!-- <span>{(01)}</span> -->
                         </div>
                         <h3><a href="{% url 'product' %} ">{{ Products.name }}</a></h3>
                         <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>{{Products.price}}</ins></span>
+                            <span class="price "><del>₹200.00</del><ins>₹ {{Products.price}}</ins></span>
+                        </div>
+                        <div class="prdescription ">
+                            <span>{{ Products.description }}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            {% for Products in products %}
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{{ Products.images.url }} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% for Products in products %}
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{{ Products.images.url }} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% for Products in products %}
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{{ Products.images.url }} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% for Products in products %}
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{{ Products.images.url }} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% for Products in products %}
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{{ Products.images.url }} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% for Products in products %}
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "butter_egg ", "food "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{{ Products.images.url }} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            
-            <div class="col-xl-3 col-lg-4 col-md-6 shaff_item " data-groups='["all ", "beverages ", "dried "]'>
-                <div class="productItem07 ">
-                    <div class="proThumb07 ">
-                        <img src="{% static 'images/product/33.png'%} " alt=" ">
-                        <div class="piActionBtns ">
-                            <a class="quickview " href="{% url 'product' %} "><i class="fa-solid fa-magnifying-glass "></i>
-                                <a class="cart " href="{% url 'cart' %} "><i class="fa-solid fa-bag-shopping "></i></a>
-                        </div>
-                        <div class="prLabels ">
-                            <p class="justin ">Fresh</p>
-                        </div>
-                        <p class="off ">Sale 20%</p>
-                    </div>
-                    <div class="product_content07 ">
-                        <div class="ratings ">
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star "></i>
-                            <i class="twi-star1 "></i>
-                            <span>(01)</span>
-                        </div>
-                        <h3><a href="{% url 'product' %} ">Vegan Egg Replacer</a></h3>
-                        <div class="pi01Price ">
-                            <span class="price "><del>₹200.00</del><ins>₹280.00</ins></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+            {% endfor %} 
         </div>
         <div class="row ">
             <div class="col-md-12 text-center ">
@@ -417,5 +202,7 @@
         </div>
     </div>
 </section>
+
+
 
 {% endblock %}

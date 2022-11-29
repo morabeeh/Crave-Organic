@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="product_details">
-                    <h3>Fresh Pineapple</h3>
+                    <h3>{{ product.name }}</h3>
                     <div class="woocommerce-product-rating">
                         <div class="ratings">
                             <i class="twi-star"></i>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="pd_excrpt">
                         <p>
-                            Sumptuous, filling, and temptingly healthy, our Biona Organic Granola with Wild Berries is just the thing to get you out of bed. The goodness of rolled wholegrain oats are combined
+                            {{ product.price }}
                         </p>
                     </div>
                     <div class="qty_weight">
@@ -179,7 +179,7 @@
                             </div>
                             <div class="piActionBtns">
                                 <a class="cart" href="{% url 'cart' %}"><i class="icon-shopping-cart"></i></a>
-                                <a class="wishlist" href="{% url 'wishlist' %}"><i class="twi-heart1"></i></a>
+                                <a class="wishlist" href="{% url 'product' %}"><i class="twi-heart1"></i></a>
                             </div>
                         </div>
                         <div class="productItem04">
@@ -205,7 +205,7 @@
                             </div>
                             <div class="piActionBtns">
                                 <a class="cart" href="{% url 'cart' %}"><i class="icon-shopping-cart"></i></a>
-                                <a class="wishlist" href="{% url 'wishlist' %}"><i class="twi-heart1"></i></a>
+                                <a class="wishlist" href="{% url 'product' %}"><i class="twi-heart1"></i></a>
                             </div>
                         </div>
                         <div class="productItem04">
@@ -232,7 +232,7 @@
                             </div>
                             <div class="piActionBtns">
                                 <a class="cart" href="{% url 'cart' %}"><i class="icon-shopping-cart"></i></a>
-                                <a class="wishlist" href="{% url 'wishlist' %}"><i class="twi-heart1"></i></a>
+                                <a class="wishlist" href="{% url 'product' %}"><i class="twi-heart1"></i></a>
                             </div>
                         </div>
                         <div class="productItem04">
@@ -243,9 +243,9 @@
                                 <div class="prLabels">
                                     <p class="justin">Fresh</p>
                                 </div>
-                                <h3><a href="{% url 'product' %}">Vegan Egg Replacer</a></h3>
+                                <h3><a href="{% url 'product' %}">{{ product.name }}</a></h3>
                                 <div class="pi01Price">
-                                    <span class="price"><del>₹200.00</del><ins>₹280.00</ins></span>
+                                    <span class="price"><del>₹200.00</del><ins>{{ product.price }}</ins></span>
                                 </div>
                                 <div class="ratings">
                                     <i class="twi-star"></i>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="piActionBtns">
                                 <a class="cart" href="{% url 'cart' %}"><i class="icon-shopping-cart"></i></a>
-                                <a class="wishlist" href="{% url 'wishlist' %}"><i class="twi-heart1"></i></a>
+                                <a class="wishlist" href="{% url 'product' %}"><i class="twi-heart1"></i></a>
                             </div>
                         </div>
                     </div>

@@ -4,9 +4,9 @@
 <html lang="en">
 
 <head>
-    <title>CraveOrganic - Organic Foods Store Responsive HTML5 Template</title>
+    <title>CraveOrganic - Organic Foods Store</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
     <link rel="stylesheet" href="{% static 'css/animate.css'%}">
@@ -20,6 +20,9 @@
     <!-- Font Awesome icon CDN -->
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/settings.css'%}">
     <link rel="stylesheet" href="{% static 'css/preset.css'%}">
@@ -60,7 +63,7 @@
                 <div class="tbaccess">
                     <ul>
                         <li><a href='contact'>Contact Us</a></li>
-                        <li><a href="javascript:void(0)">Track Your Order</a></li>
+                        <li><a href="/orders">Track Your Order</a></li>
                     </ul>
                 </div>
             </div>
@@ -83,16 +86,11 @@
                             <input type="search" name="s" placeholder="1.8K Products Search. Hit enter...">
                             <div class="search-category">
                                 <select>
-                                    <option value="0">Select a Categories</option>
-                                    <option value="12">Vegetable</option>
-                                    <option value="19">Tomato</option>
-                                    <option value="20">Caabage</option> 
-                                    <option value="20">Brooklyn</option>
-                                    <option value="20">Onion</option>
-                                    <option value="12">Fruits</option>
-                                    <option value="12">Juice</option>
-                                    <option value="12">Spices</option>
-                                    <option value="12">Jam Jelly</option>
+                                    <!-- <option value="0">Select a Categories</option> -->
+                                    {% for category in categories %}
+				<a href="/?category={{category.id}}"
+					class="list-group-item list-group-item-action btn btn-outline-success ">{{category.name}}</a>
+				{% endfor %}    
                                 </select>
                             </div>
                         </form>
@@ -100,11 +98,27 @@
                 </div>
                 <div class="col-xl-2 col-lg-3 col-md-3">
                     <div class="accessNav">
-                        <a class="userBtn" href="javascript:void(0);"><i class="fa-solid fa-user"></i></a>
-                        <a class="wishlistBtn" href="{% url 'wishlist' %}"><i class="fa-solid fa-heart"></i><span>2</span></a>
-                        <div class="shoping_cart">
-                            <a class="cartBtn" href="javascript:void(0);"><i class="fa-solid fa-bag-shopping"></i><span>2</span></a>
-                            <div class="show_cart_area">
+                        <a class="cartBtn" href="/cart"><i class="fa-solid fa-cart-shopping"></i>
+                            Cart
+                            <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
+                            <span class="sr-only">(current)</span></a> {% if request.session.customer %}
+                        <a class="userBtn" href="/orders"><i class="fa-solid fa-bag-shopping"></i>Orders
+                                <span class="sr-only">(current)</span></a>
+                        <a class="userBtn" href="/logout"><i class="fa-solid fa-user-slash"></i>Logout
+                                <span class="sr-only">(current)</span></a> {% else %}
+
+                        <a class="userBtn" href="/signup"><i class="fa-solid fa-user"></i>Signup
+                            <span class="sr-only">(current)</span></a>
+
+                        <a class="userBtn" href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login
+                            <span class="sr-only">(current)</span></a> {% endif %}
+
+
+
+
+
+
+                        <!-- <div class="show_cart_area">
                                 <ul class="woocommerce-mini-cart cart_list product_list_widget">
                                     <li class="woocommerce-mini-cart-item mini_cart_item">
                                         <div class="mc_item">
@@ -136,8 +150,8 @@
                                     <a href="{% url 'cart' %}" class="button wc-forward ">View cart</a>
                                     <a href="{% url 'cart' %}" class="button checkout wc-forward ">Checkout</a>
                                 </p>
-                            </div>
-                        </div>
+                            </div> -->
+
                     </div>
                 </div>
             </div>
@@ -306,7 +320,7 @@
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
                             <li><a href="{% url 'about' %}">About Us</a></li>
                             <li><a href="{% url 'cart' %}">Your Carts</a></li>
-                            <li><a href="{% url 'wishlist' %}">Wishlist</a></li>
+                            <li><a href="{% url 'orders' %}">Your order</a></li>
 
                         </ul>
 
